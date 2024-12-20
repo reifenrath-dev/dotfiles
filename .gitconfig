@@ -12,7 +12,6 @@
 	swc = switch -c
 	c = commit -m
 	ca = !git add -A && git c
-	cap = !"f () { git add -A && git commit -m '$@' && git push; }; f"
 	amend = commit --amend --no-edit
 
 	# stash
