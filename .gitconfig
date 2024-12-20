@@ -1,0 +1,41 @@
+[alias]
+	# general
+	gconf = config --global
+	s = status
+	st = status
+
+	# branching
+	b = branch
+	co = checkout
+	cp = cherry-pick
+	sw = switch
+	swc = switch -c
+	c = commit -m
+	ca = !git add -A && git c
+	cap = '!f() { git add -A && git commit -m "$@" && git push; }; f'
+	amend = commit --amend --no-edit
+
+	# stash
+	su = stash -u
+	sp = stash pop
+
+	# reset
+	rh = reset HEAD~
+	rh1 = reset HEAD~1
+	rhh = reset HEAD --hard
+
+	# worktree
+	wt = worktree
+	wtl = worktree list
+
+	# log
+	l = log --oneline --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	l3 = log -3 --oneline --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	l5 = log -5 --oneline --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	lg = log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
+[push]
+	autoSetupRemote = true
+[branch]
+	sort = -committerdate
+[column]
+	ui = auto
