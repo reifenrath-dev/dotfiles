@@ -1,4 +1,14 @@
-#v1
+localVersion=2
+remoteVersion=$(curl https://raw.githubusercontent.com/reifenrath-dev/dotfiles/refs/heads/main/.bash_aliases 2> /dev/null | head -n1 | grep -o "[0-9]*")
+if [ $remoteVersion -gt $localVersion ]
+then
+    echo "New version of your bash_aliases available!"
+    echo "Remote: $remoteVersion Local: $localVersion"
+elif [ $localVersion -gt $remoteVersion ]
+then
+    echo "Your local version is newer than the remote. Commit your changes!"
+    echo "Remote: $remoteVersion Local: $localVersion"
+fi
 
 # https://stackoverflow.com/a/677212
 command_exists () {
