@@ -1,0 +1,10 @@
+dev.patrickpichler.darculaPitchBlackTheme
+org.toml.lang
+Key Promoter X
+Abc.MoqComplete.Rider
+com.ahmed3elshaer.true-black-theme
+com.intellij.resharper.StructuredLogging
+com.intellij.plugin.adernov.powershell
+com.intellij.ml.llm
+PlantUML integration
+nl.rubensten.texifyidea
