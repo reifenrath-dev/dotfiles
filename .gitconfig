@@ -13,6 +13,7 @@
 	c = commit -m
 	ca = !git add -A && git c
 	amend = commit --amend --no-edit
+	mom = !echo 'fetching...' && git fetch && echo 'merging...' && git merge origin/main
 
 	# stash
 	su = stash -u
@@ -27,11 +28,18 @@
 	wt = worktree
 	wtl = worktree list
 
-	# log
-	l = log --oneline --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-	l3 = log -3 --oneline --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-	l5 = log -5 --oneline --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-	lg = log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
+		# log
+	# formats: https://git-scm.com/docs/git-log#_pretty_formats
+	# colors: https://git-scm.com/docs/git-config#Documentation/git-config.txt-color
+	l = log --oneline --pretty=format:'%C(brightmagenta)%h%Creset %C(bold brightgreen)%s%Creset'
+	l3 = l -3
+	l5 = l -5
+	l10 = l -10
+	ll = log --oneline --pretty=format:'%C(brightmagenta)%h%Creset %C(bold brightgreen)%s%Creset %C(brightblue)%cr%Creset %C(dim white)%an%Creset%C(brightyellow)%d%Creset'
+	ll3 = ll -3
+	ll5 = ll -5
+	ll10 = ll -10
+	lg = log --graph --pretty=format:'%C(brightmagenta)%h%Creset %C(bold brightgreen)%s%Creset %C(brightblue)%cr%Creset %C(dim white)%an%Creset%C(brightyellow)%d%Creset' --abbrev-commit --branches
 [push]
 	autoSetupRemote = true
 [branch]
