@@ -28,7 +28,7 @@
 	wt = worktree
 	wtl = worktree list
 
-		# log
+	# log
 	# formats: https://git-scm.com/docs/git-log#_pretty_formats
 	# colors: https://git-scm.com/docs/git-config#Documentation/git-config.txt-color
 	l = log --oneline --pretty=format:'%C(brightmagenta)%h%Creset %C(bold brightgreen)%s%Creset'
