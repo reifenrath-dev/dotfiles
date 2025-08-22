@@ -1,4 +1,4 @@
-localVersion=2
+localVersion=3
 remoteVersion=$(curl https://raw.githubusercontent.com/reifenrath-dev/dotfiles/refs/heads/main/.bash_aliases 2> /dev/null | head -n1 | grep -o "[0-9]*")
 if [ $remoteVersion -gt $localVersion ]
 then
@@ -44,6 +44,15 @@ else
     alias la='ls -A'
     alias lla='ls -la'
     alias lt='ls --tree'
+fi
+
+# fd
+if ! command_exists fdfind
+then
+    echo "fd is not installed or not setup correctly! https://github.com/sharkdp/fd"
+    echo "steps for Ubuntu"
+    echo "1. sudo apt install fd-find"
+    echo "2. ln -s $(which fdfind) ~/.local/bin/fd"
 fi
 
 # setting the editor
